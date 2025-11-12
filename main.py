@@ -5,7 +5,6 @@ from pdf2image import convert_from_bytes
 from io import BytesIO
 import os
 
-
 # Initialize client
 api_key = os.getenv("MISTRAL_API_KEY")
 client = Mistral(api_key=api_key)
@@ -91,3 +90,6 @@ if uploaded_file:
         st.subheader("🧾 Extracted JSON:")
         st.json(response.choices[0].message.content)
 
+
+
+# test 
