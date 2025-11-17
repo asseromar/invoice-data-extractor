@@ -4,6 +4,7 @@ from mistralai import Mistral
 from pdf2image import convert_from_bytes
 from io import BytesIO
 import os
+from PIL import Image
 
 # Initialize client
 api_key = os.getenv("MISTRAL_API_KEY")
@@ -45,25 +46,47 @@ Return EXACTLY this JSON structure — no explanations, no extra text:
 
 """
 
-# Handle upload
 if uploaded_file:
-    st.write("✅ File uploaded successfully")
+    st.success("✅ File uploaded successfully")
 
-    # Convert PDF to images if needed
-    images = []
+    images = []  
+
+    # Handle PDFs (multi-page)
     if uploaded_file.type == "application/pdf":
-        pages = convert_from_bytes(uploaded_file.read())
-        for page in pages:
-            buf = BytesIO()
-            page.save(buf, format="JPEG")
-            image_bytes = buf.getvalue()
-            images.append(base64.b64encode(image_bytes).decode("utf-8"))
-    else:
-        # Single image
-        images.append(base64.b64encode(uploaded_file.read()).decode("utf-8"))
+        try:
+            pdf_bytes = uploaded_file.read()
+            pages = convert_from_bytes(pdf_bytes)
 
-    # Display preview
-    st.image(uploaded_file, caption="Uploaded document preview")
+            st.info(f"📄 PDF detected with {len(pages)} page(s). Converting to images...")
+
+            for i, page in enumerate(pages, start=1):
+                buf = BytesIO()
+                page.save(buf, format="JPEG")
+                image_bytes = buf.getvalue()
+                base64_image = base64.b64encode(image_bytes).decode("utf-8")
+                images.append(base64_image)
+
+                st.image(page, caption=f"Page {i} Preview", use_container_width=True)
+
+        except Exception as e:
+            st.error(f"Error processing PDF: {e}")
+            st.stop()
+
+    # Handle normal images (JPG, JPEG, PNG)
+    else:
+        try:
+            image = Image.open(uploaded_file)
+            buf = BytesIO()
+            image.save(buf, format="JPEG")
+            image_bytes = buf.getvalue()
+            base64_image = base64.b64encode(image_bytes).decode("utf-8")
+            images.append(base64_image)
+
+            st.image(image, caption="Uploaded Image Preview", use_container_width=True)
+
+        except Exception as e:
+            st.error(f"This file is not a valid image: {e}")
+            st.stop()
 
     if st.button("🔍 Extract data"):
         st.write("⏳ Processing with Pixtral-12B...")
@@ -89,7 +112,3 @@ if uploaded_file:
 
         st.subheader("🧾 Extracted JSON:")
         st.json(response.choices[0].message.content)
-
-
-
-# test 

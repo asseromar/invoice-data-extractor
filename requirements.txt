@@ -2,3 +2,5 @@ streamlit
 mistralai
 pdf2image
 pillow
+poppler-utils
+
