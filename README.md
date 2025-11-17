@@ -1,23 +1,23 @@
 # 📄 Invoice & Document Data Extractor (Pixtral-12B + Streamlit)
 
-A multimodal AI web app that uses **Pixtral-12B**, Mistral’s **visual encoder–decoder model**, to analyze and extract structured data from **PDFs or images**.
+A multimodal AI web app that uses **Pixtral-12B**, Mistral’s visual encoder–decoder model, to analyze and extract structured data from PDFs or images.
 
-While it’s optimized for invoices, this app can extract **any kind of information** depending on the **prompt** — making it a flexible and powerful tool for document understanding, from receipts and purchase orders to reports or certificates.
+While it’s optimized for invoices, this app can extract any kind of information depending on the prompt — making it a flexible and powerful tool for document understanding, from receipts and purchase orders to reports or certificates.
 
 ## Features
 
-- Uses **Pixtral-12B**, a large-scale **vision–language model** capable of understanding both text and layout from document images  
-- Works with **custom prompts** — extract *any* fields, not just invoice data  
+- Uses **Pixtral-12B**, a large-scale vision–language model capable of understanding both text and layout from document images  
+- Works with custom prompts — extract *any* fields, not just invoice data  
 - Handles **PDFs (multi-page)**, **JPG**, and **PNG** formats  
 - Converts PDFs to images automatically with `pdf2image`  
-- Clean Streamlit interface with **automatic light/dark mode**  
-- Deployable locally, with Docker, or on **Hugging Face Spaces**
+- Clean Streamlit interface with automatic light/dark mode
+- Deployable locally, with Docker, or on Hugging Face Spaces
 
 ## How It Works
 
 1. The uploaded document (PDF or image) is converted into base64-encoded images.  
-2. These images, along with a user-defined **text prompt**, are sent to the **Pixtral-12B** multimodal model via Mistral’s API.  
-3. Pixtral’s **visual encoder** interprets the layout, text, and visual structure of the document.  
+2. These images, along with a user-defined text prompt, are sent to the Pixtral-12B multimodal model via Mistral’s API.  
+3. Pixtral’s visual encoder interprets the layout, text, and visual structure of the document.  
 4. The model returns structured data (typically JSON) that matches the prompt — such as:
    - Invoice metadata (dates, totals, references)
    - Delivery or shipping details
@@ -110,7 +110,7 @@ Paris, France
 
 ## 🪪 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
 ---
 
