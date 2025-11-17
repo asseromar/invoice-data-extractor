@@ -29,7 +29,7 @@ While it’s optimized for invoices, this app can extract any kind of informatio
 You can modify the extraction behavior in `app.py` by changing the `prompt` variable.
 
 **Example 1 — Extract delivery information:**
-
+```
 Return a JSON with:
 {
 "expediteur": "",
@@ -37,7 +37,7 @@ Return a JSON with:
 "adresse_livraison": "",
 "date_expedition": ""
 }
-
+```
 This flexibility allows the app to adapt to *any* document type or layout.
 
 ## Tech Stack
