@@ -101,7 +101,9 @@ streamlit run app.py
 ## Author
 
 **Asser Omar**
+
 Paris, France
+
 [LinkedIn](https://www.linkedin.com/in/asseromar/) 
 
 ---
