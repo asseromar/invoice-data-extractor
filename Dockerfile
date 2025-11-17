@@ -10,7 +10,7 @@ COPY requirements.txt .
 # 4️⃣ Install all dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5️⃣ Copy all remaining files (your app.py, etc.)
+# 5️⃣ Copy all remaining files (app.py)
 COPY . .
 
 # 6️⃣ Expose port 8501 for Streamlit
