@@ -1,4 +1,4 @@
-# Invoice & Document Data Extractor (Pixtral-12B + Streamlit)
+## Invoice & Document Data Extractor (Pixtral-12B + Streamlit)
 
 A multimodal AI web app that uses **Pixtral-12B**, Mistral’s visual encoder–decoder model, to analyze and extract structured data from PDFs or images.
 
