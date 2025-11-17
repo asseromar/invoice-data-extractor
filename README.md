@@ -29,8 +29,9 @@ While it’s optimized for invoices, this app can extract any kind of informatio
 You can modify the extraction behavior in `app.py` by changing the `prompt` variable.
 
 **Example 1 — Extract delivery information:**
-```
+
 Return a JSON with:
+```
 {
 "expediteur": "",
 "destinataire": "",
