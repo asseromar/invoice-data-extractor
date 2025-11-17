@@ -28,7 +28,7 @@ While it’s optimized for invoices, this app can extract any kind of informatio
 
 You can modify the extraction behavior in `app.py` by changing the `prompt` variable.
 
-**Example 1 — Extract delivery information:**
+**Example — Extract delivery information:**
 
 Return a JSON with:
 ```
@@ -43,13 +43,13 @@ This flexibility allows the app to adapt to *any* document type or layout.
 
 ## Tech Stack
 
-| Component               | Technology                                   |
-| ----------------------- | -------------------------------------------- |
-| 🧠 Model                | Pixtral-12B (Mistral visual encoder–decoder) |
-| 🖥 Frontend             | Streamlit                                    |
-| 📦 PDF/Image Processing | pdf2image, Pillow                            |
-| ☁️ Deployment           | Hugging Face Spaces / Docker                 |
-| 🔑 Secrets              | `MISTRAL_API_KEY` environment variable       |
+| Component            | Technology                                   |
+| ---------------------| -------------------------------------------- |
+| Model                | Pixtral-12B (Mistral visual encoder–decoder) |
+| Frontend             | Streamlit                                    |
+| PDF/Image Processing | pdf2image, Pillow                            |
+| Deployment           | Hugging Face Spaces / Docker                 |
+| Secrets              | `MISTRAL_API_KEY` environment variable       |
 
 
 ## Installation (Local)
