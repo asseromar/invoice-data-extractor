@@ -49,7 +49,7 @@ If any field is missing, leave it empty ("").
 """
 ```
 
-Return a JSON with:
+Return a JSON with the desired fields only:
 ```
 {
 "expediteur": "",
