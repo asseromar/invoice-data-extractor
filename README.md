@@ -29,6 +29,26 @@ While it’s optimized for invoices, this app can extract any kind of informatio
 You can modify the extraction behavior in `app.py` by changing the `prompt` variable.
 
 **Example — Extract delivery information:**
+```
+prompt = """
+You are an assistant specialized in document analysis.
+
+Carefully read the uploaded delivery note or shipping document image
+and extract the following structured fields.
+
+Return ONLY a valid JSON object with the detected values in this format:
+
+{
+  "expediteur": "",      # sender or supplier name
+  "destinataire": "",    # recipient name
+  "adresse_livraison": "",  # full delivery address
+  "date_expedition": "",    # shipping or delivery date
+  "numero_de_commande": ""  # order or reference number
+}
+
+If any field is missing, leave it empty ("").
+"""
+```
 
 Return a JSON with:
 ```
