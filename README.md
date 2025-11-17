@@ -85,7 +85,7 @@ brew install poppler
 
 #### Windows
 
-Download [Poppler for Windows](https://blog.alivate.com.au/poppler-windows/) and add its `/bin` folder to your PATH.
+Download [Poppler for Windows](https://github.com/oschwartz10612/poppler-windows/releases/) and add its `/bin` folder to your PATH.
 
 ### 5️⃣ Add your Mistral API key
 
