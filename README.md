@@ -39,11 +39,10 @@ and extract the following structured fields.
 Return ONLY a valid JSON object with the detected values in this format:
 
 {
-  "expediteur": "",      # sender or supplier name
-  "destinataire": "",    # recipient name
-  "adresse_livraison": "",  # full delivery address
-  "date_expedition": "",    # shipping or delivery date
-  "numero_de_commande": ""  # order or reference number
+  "expediteur": "",            # sender or supplier name
+  "destinataire": "",          # recipient name
+  "adresse_livraison": "",     # full delivery address
+  "date_expedition": "",       # shipping or delivery date
 }
 
 If any field is missing, leave it empty ("").
