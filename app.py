@@ -21,7 +21,7 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-        /* 🌞 Light mode */
+        /* Light mode */
         @media (prefers-color-scheme: light) {
             [data-testid="stAppViewContainer"] {
                 background-color: #f9f9f9;
@@ -42,7 +42,7 @@ st.markdown(
             }
         }
 
-        /* 🌙 Dark mode */
+        /* Dark mode */
         @media (prefers-color-scheme: dark) {
             [data-testid="stAppViewContainer"] {
                 background-color: #0e1117;
@@ -71,13 +71,13 @@ st.markdown(
 # -------------------------
 # Header
 # -------------------------
-st.markdown("<p class='main-title'>📄 Invoice Data Extractor</p>", unsafe_allow_html=True)
+st.markdown("<p class='main-title'>Invoice Data Extractor</p>", unsafe_allow_html=True)
 # -------------------------
 # Initialize Mistral client
 # -------------------------
 api_key = os.getenv("MISTRAL_API_KEY")
 if not api_key:
-    st.warning("⚠️ API key not found. Please set MISTRAL_API_KEY in your environment variables.")
+    st.warning("API key not found. Please set MISTRAL_API_KEY in your environment variables.")
 else:
     client = Mistral(api_key=api_key)
 
@@ -124,7 +124,7 @@ Return EXACTLY this JSON structure:
 # File preview & processing
 # -------------------------
 if uploaded_file:
-    st.success("✅ File uploaded successfully!")
+    st.success("File uploaded successfully!")
 
     images = []
 
@@ -144,7 +144,7 @@ if uploaded_file:
                 st.image(page, caption=f"Page {i} Preview", use_container_width=True)
 
         except Exception as e:
-            st.error(f"❌ Error processing PDF: {e}")
+            st.error(f"Error processing PDF: {e}")
             st.stop()
 
     else:
@@ -158,7 +158,7 @@ if uploaded_file:
             st.image(image, caption="Uploaded Image Preview", use_container_width=True)
 
         except Exception as e:
-            st.error(f"❌ Invalid image file: {e}")
+            st.error(f"Invalid image file: {e}")
             st.stop()
 
     # -------------------------
@@ -166,7 +166,7 @@ if uploaded_file:
     # -------------------------
     if st.button("🔍 Extract data"):
         if not api_key:
-            st.error("❌ API key missing. Please set MISTRAL_API_KEY.")
+            st.error("API key missing. Please set MISTRAL_API_KEY.")
             st.stop()
 
         st.info("⏳ Sending document to Pixtral-12B for analysis...")
@@ -190,7 +190,7 @@ if uploaded_file:
                 response_format={"type": "json_object"},
             )
 
-        st.success("✅ Extraction complete!")
+        st.success("Extraction complete!")
 
         st.subheader("🧾 Extracted Data")
         with st.expander("View JSON result", expanded=True):
