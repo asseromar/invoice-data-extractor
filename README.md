@@ -6,12 +6,12 @@ While it’s optimized for invoices, this app can extract **any kind of informat
 
 ## Features
 
-✅ Uses **Pixtral-12B**, a large-scale **vision–language model** capable of understanding both text and layout from document images  
-✅ Works with **custom prompts** — extract *any* fields, not just invoice data  
-✅ Handles **PDFs (multi-page)**, **JPG**, and **PNG** formats  
-✅ Converts PDFs to images automatically with `pdf2image`  
-✅ Clean Streamlit interface with **automatic light/dark mode**  
-✅ Deployable locally, with Docker, or on **Hugging Face Spaces**
+- Uses **Pixtral-12B**, a large-scale **vision–language model** capable of understanding both text and layout from document images  
+- Works with **custom prompts** — extract *any* fields, not just invoice data  
+- Handles **PDFs (multi-page)**, **JPG**, and **PNG** formats  
+- Converts PDFs to images automatically with `pdf2image`  
+- Clean Streamlit interface with **automatic light/dark mode**  
+- Deployable locally, with Docker, or on **Hugging Face Spaces**
 
 ## How It Works
 
