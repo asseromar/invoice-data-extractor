@@ -115,5 +115,5 @@ This project is licensed under the **MIT License**.
 
 ---
 
-⭐ If you like this project, consider giving it a **star** on GitHub — it helps others discover it!
+⭐ If you like this project, consider giving it a star on GitHub — it helps others discover it!
 
