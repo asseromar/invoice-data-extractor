@@ -132,7 +132,7 @@ if uploaded_file:
         try:
             pdf_bytes = uploaded_file.read()
             pages = convert_from_bytes(pdf_bytes)
-            st.info(f"📄 PDF detected with {len(pages)} page(s). Converting...")
+            st.info(f"📄 PDF detected with {len(pages)} page(s).")
 
             for i, page in enumerate(pages, start=1):
                 buf = BytesIO()
